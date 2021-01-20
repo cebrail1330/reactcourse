@@ -2,9 +2,13 @@ import * as actionTypes from "./actionTypes"
 import axios from "axios";
 
 
-export function getProduct(){
+export function getProduct(categoryId){
     return function (dispatch){
-        return axios.get("http://localhost:3000/products")
+        let url ="http://localhost:3000/products";
+        if(categoryId){
+            url = url + "?categoryID="+categoryId
+        }
+        return axios.get(url)
             .then(response => dispatch(getCategoriesSuccess(response.data)))
     }
 }
