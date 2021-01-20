@@ -5,7 +5,6 @@ import Dashboard from "./Dashboard";
 function App() {
   return (
     <div>
-      <Navi/>
       <Dashboard/>
     </div>
   );
