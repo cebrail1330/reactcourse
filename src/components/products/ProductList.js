@@ -2,32 +2,34 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as productActions from "../../redux/actions/productActions"
+import * as cartActions from "../../redux/actions/cartActions"
 import {Column} from "primereact/column";
 import {DataTable} from "primereact/datatable";
 import {Button} from "primereact/button";
+import {InputText} from "primereact/inputtext";
 
 
 class ProductList extends Component {
 
+    state={
+        productSearch:""
+    }
     componentDidMount() {
         this.props.action.getProducts()
     }
 
-    DataTableButton() {
-        return (
-            <div>
-                <React.Fragment>
-                    <Button label="Add" icon="pi pi-plus" className="p-button-success p-mr-2"/>
-                </React.Fragment>
-            </div>
-        )
+    addToCart = (product) => {
+        console.log(product);
+        this.props.action.addToCart({quantity:1, product})
     }
-    DataTableButtond(rowData) {
-        return (
-            <div>
-                    <Button label="Add" icon="pi pi-plus" className="p-button-success p-mr-2"/>
-            </div>
-        )
+    search=(e)=>{
+
+       this.setState({productSearch:e.target.value})
+
+    }
+    submitHandler=(event)=>{
+        event.preventDefault()
+        console.log(this.state.productSearch)
     }
 
     render() {
@@ -39,21 +41,28 @@ class ProductList extends Component {
         ];
         const dynamicColumns = columns.map((col, i) => {
             return <Column key={col.field} field={col.field} header={col.header}/>;
-        });**/
+        }); **/
 
-        const searchBodyTemplate = () => {
-            return <Button label="Add" className="p-button-secondary" />;
+        const searchBodyTemplate = (rowData) => {
+            return <Button label="Add" className="p-button-secondary" onClick={()=>this.addToCart(rowData)} />;
         }
         return (
             <div>
                 <div className="card">
-                    <DataTable value={this.props.products} >
+                    <form className="p-formgroup-inline" onSubmit={this.submitHandler}>
+                        <div className="p-field">
+                            <InputText id="firstname5" name ="input"type="text" placeholder="Search" onChange={(e)=>this.search(e)}/>
+                        </div>
+                        <InputText type="submit" label="Submit" />
+                    </form>
+                    <a href="" className="internal -link"></a>
+                    <DataTable value={this.props.products} onValueChange={sortedData => console.log(sortedData)}>
                         <Column field="productID" header="Code"></Column>
                         <Column field="name" header="Name"></Column>
                         <Column field="quantityPerUnit" header="Quantity Per Unit"></Column>
                         <Column field="unitPrice" header="Unit Price"></Column>
-                        <Column headerStyle={{ width: '4rem'}} body={searchBodyTemplate}></Column>
-                        <button>kj</button>
+                        <Column headerStyle={{width: '4rem'}} body={searchBodyTemplate}></Column>
+
                     </DataTable>
 
 
@@ -67,7 +76,6 @@ class ProductList extends Component {
 
 /*<DataTable value={this.props.products}>
                         {dynamicColumns}
-                        <Column>zasdasdasdadsasdasc</Column>
                     </DataTable>*/
 function mapStateToProps(state) {
     return {
@@ -78,7 +86,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         action: {
-            getProducts: bindActionCreators(productActions.getProduct, dispatch)
+            getProducts: bindActionCreators(productActions.getProduct, dispatch),
+            addToCart: bindActionCreators(cartActions.addToCart, dispatch)
         }
     }
 }

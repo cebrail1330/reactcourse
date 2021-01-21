@@ -13,8 +13,13 @@ class CategoryList extends Component {
     }
 
     selectCategory = (category)=>{
+
         this.props.actions.changeCategory(category);
         this.props.actions.getProducts(category.id);
+    }
+    selectCategorys = (category)=>{
+        console.log(category)
+
     }
 
     render() {
@@ -23,6 +28,7 @@ class CategoryList extends Component {
             <div className="card">
                 <ListBox  options={category} value={category} onChange={(e) => this.selectCategory(e.value)}  optionLabel="name" style={{width: '15rem'}} />
                 <h5>Seçili kategori: {this.props.currentCategory.name}</h5>
+
             </div>
 
         );
@@ -32,7 +38,8 @@ class CategoryList extends Component {
 function mapStateToProps(state) {
     return {
         currentCategory: state.changeCategoryReducer,
-        categories: state.categoryListReducer
+        categories: state.categoryListReducer,
+        products: state.productListReducer
     }
 }
 
