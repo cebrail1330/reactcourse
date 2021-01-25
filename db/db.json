@@ -2,7 +2,6 @@
 	"products":[
 	{
 		"productID" : 4,
-		"supplierID" : 2,
 		"categoryID" : 2,
 		"quantityPerUnit" : "48 - 6 oz jars",
 		"unitPrice" : 22,
@@ -14,7 +13,6 @@
 	},
 	{
 		"productID" : 5,
-		"supplierID" : 2,
 		"categoryID" : 2,
 		"quantityPerUnit" : "36 boxes",
 		"unitPrice" : 21.35,
@@ -26,7 +24,6 @@
 	},
 	{
 		"productID" : 6,
-		"supplierID" : 3,
 		"categoryID" : 2,
 		"quantityPerUnit" : "12 - 8 oz jars",
 		"unitPrice" : 25,
@@ -38,7 +35,6 @@
 	},
 	{
 		"productID" : 7,
-		"supplierID" : 3,
 		"categoryID" : 7,
 		"quantityPerUnit" : "12 - 1 lb pkgs.",
 		"unitPrice" : 30,
@@ -50,7 +46,6 @@
 	},
 	{
 		"productID" : 8,
-		"supplierID" : 3,
 		"categoryID" : 2,
 		"quantityPerUnit" : "12 - 12 oz jars",
 		"unitPrice" : 40,
@@ -62,7 +57,6 @@
 	},
 	{
 		"productID" : 9,
-		"supplierID" : 4,
 		"categoryID" : 6,
 		"quantityPerUnit" : "18 - 500 g pkgs.",
 		"unitPrice" : 97,
@@ -74,7 +68,6 @@
 	},
 	{
 		"productID" : 10,
-		"supplierID" : 4,
 		"categoryID" : 8,
 		"quantityPerUnit" : "12 - 200 ml jars",
 		"unitPrice" : 31,
@@ -86,7 +79,6 @@
 	},
 	{
 		"productID" : 2,
-		"supplierID" : 1,
 		"categoryID" : 1,
 		"quantityPerUnit" : "24 - 12 oz bottles",
 		"unitPrice" : 19,
@@ -98,7 +90,6 @@
 	},
 	{
 		"productID" : 3,
-		"supplierID" : 1,
 		"categoryID" : 2,
 		"quantityPerUnit" : "12 - 550 ml bottles",
 		"unitPrice" : 10,
@@ -110,7 +101,6 @@
 	},
 	{
 		"productID" : 11,
-		"supplierID" : 5,
 		"categoryID" : 4,
 		"quantityPerUnit" : "1 kg pkg.",
 		"unitPrice" : 21,
@@ -122,7 +112,6 @@
 	},
 	{
 		"productID" : 12,
-		"supplierID" : 5,
 		"categoryID" : 4,
 		"quantityPerUnit" : "10 - 500 g pkgs.",
 		"unitPrice" : 38,
@@ -134,7 +123,6 @@
 	},
 	{
 		"productID" : 13,
-		"supplierID" : 6,
 		"categoryID" : 8,
 		"quantityPerUnit" : "2 kg box",
 		"unitPrice" : 6,
@@ -146,7 +134,6 @@
 	},
 	{
 		"productID" : 14,
-		"supplierID" : 6,
 		"categoryID" : 7,
 		"quantityPerUnit" : "40 - 100 g pkgs.",
 		"unitPrice" : 23.25,
@@ -158,7 +145,6 @@
 	},
 	{
 		"productID" : 15,
-		"supplierID" : 6,
 		"categoryID" : 2,
 		"quantityPerUnit" : "24 - 250 ml bottles",
 		"unitPrice" : 15.5,
@@ -170,7 +156,6 @@
 	},
 	{
 		"productID" : 1,
-		"supplierID" : 1,
 		"categoryID" : 1,
 		"quantityPerUnit" : "10 boxes x 20 bags",
 		"unitPrice" : 18,
@@ -182,7 +167,6 @@
 	},
 	{
 		"productID" : 16,
-		"supplierID" : 7,
 		"categoryID" : 3,
 		"quantityPerUnit" : "32 - 500 g boxes",
 		"unitPrice" : 17.45,
@@ -194,7 +178,6 @@
 	},
 	{
 		"productID" : 17,
-		"supplierID" : 7,
 		"categoryID" : 6,
 		"quantityPerUnit" : "20 - 1 kg tins",
 		"unitPrice" : 39,
@@ -206,7 +189,6 @@
 	},
 	{
 		"productID" : 18,
-		"supplierID" : 7,
 		"categoryID" : 8,
 		"quantityPerUnit" : "16 kg pkg.",
 		"unitPrice" : 62.5,
@@ -218,7 +200,6 @@
 	},
 	{
 		"productID" : 19,
-		"supplierID" : 8,
 		"categoryID" : 3,
 		"quantityPerUnit" : "10 boxes x 12 pieces",
 		"unitPrice" : 9.2,
@@ -230,7 +211,6 @@
 	},
 	{
 		"productID" : 20,
-		"supplierID" : 8,
 		"categoryID" : 3,
 		"quantityPerUnit" : "30 gift boxes",
 		"unitPrice" : 81,
@@ -242,7 +222,6 @@
 	},
 	{
 		"productID" : 24,
-		"supplierID" : 10,
 		"categoryID" : 1,
 		"quantityPerUnit" : "12 - 355 ml cans",
 		"unitPrice" : 4.5,
@@ -254,7 +233,6 @@
 	},
 	{
 		"productID" : 25,
-		"supplierID" : 11,
 		"categoryID" : 3,
 		"quantityPerUnit" : "20 - 450 g glasses",
 		"unitPrice" : 14,
@@ -266,7 +244,6 @@
 	},
 	{
 		"productID" : 26,
-		"supplierID" : 11,
 		"categoryID" : 3,
 		"quantityPerUnit" : "100 - 250 g bags",
 		"unitPrice" : 31.23,
@@ -278,7 +255,6 @@
 	},
 	{
 		"productID" : 27,
-		"supplierID" : 11,
 		"categoryID" : 3,
 		"quantityPerUnit" : "100 - 100 g pieces",
 		"unitPrice" : 43.9,
@@ -290,7 +266,6 @@
 	},
 	{
 		"productID" : 28,
-		"supplierID" : 12,
 		"categoryID" : 7,
 		"quantityPerUnit" : "25 - 825 g cans",
 		"unitPrice" : 45.6,

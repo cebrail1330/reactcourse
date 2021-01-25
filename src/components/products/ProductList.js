@@ -16,7 +16,7 @@ class ProductList extends Component {
         productSearch:""
     }
     componentDidMount() {
-        this.props.action.getProducts()
+        this.props.action.getProducts();
     }
 
     addToCart = (product) => {
