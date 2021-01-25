@@ -7,6 +7,7 @@ import {Column} from "primereact/column";
 import {DataTable} from "primereact/datatable";
 import {Button} from "primereact/button";
 import {InputText} from "primereact/inputtext";
+import {NavLink} from "react-router-dom";
 
 
 class ProductList extends Component {
@@ -49,6 +50,11 @@ class ProductList extends Component {
         return (
             <div>
                 <div className="card">
+                    <li>
+                        <ul>
+                            <a href="#Geitost">Geitost</a>
+                        </ul>
+                    </li>
                     <form className="p-formgroup-inline" onSubmit={this.submitHandler}>
                         <div className="p-field">
                             <InputText id="firstname5" name ="input"type="text" placeholder="Search" onChange={(e)=>this.search(e)}/>
@@ -58,13 +64,15 @@ class ProductList extends Component {
                     <a href="" className="internal -link"></a>
                     <DataTable value={this.props.products} onValueChange={sortedData => console.log(sortedData)}>
                         <Column field="productID" header="Code"></Column>
-                        <Column field="name" header="Name"></Column>
+                        <Column field="name" header="Name" columnKey="name"></Column>
                         <Column field="quantityPerUnit" header="Quantity Per Unit"></Column>
                         <Column field="unitPrice" header="Unit Price"></Column>
                         <Column headerStyle={{width: '4rem'}} body={searchBodyTemplate}></Column>
 
                     </DataTable>
-
+                    <div id="Geitost">
+                        lasdalkjnbsdaksjbdj
+                    </div>
 
                 </div>
 
