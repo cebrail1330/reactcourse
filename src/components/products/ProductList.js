@@ -63,7 +63,7 @@ class ProductList extends Component {
                     </form>
                     <a href="" className="internal -link"></a>
                     <DataTable value={this.props.products} onValueChange={sortedData => console.log(sortedData)}>
-                        <Column field="productID" header="Code"></Column>
+                        <Column field="id" header="Code"></Column>
                         <Column field="name" header="Name" columnKey="name"></Column>
                         <Column field="quantityPerUnit" header="Quantity Per Unit"></Column>
                         <Column field="unitPrice" header="Unit Price"></Column>

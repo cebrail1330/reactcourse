@@ -13,7 +13,7 @@ class AddProduct extends Component {
         quantityPerUnit:null,
         unitPrice:null,
         categoryID: null,
-        //categoryName: null
+        categoryName: null
     }
     componentDidMount() {
         this.props.actions.getCategories()
@@ -25,7 +25,7 @@ class AddProduct extends Component {
     }
     onChangeDropDown =(event)=>{
         event.preventDefault();
-        this.setState({categoryID: event.target.value.id})
+        this.setState({categoryID: event.target.value.id, categoryName:event.value})
     }
     onClickHandler =(event)=>{
         this.props.actions.addProduct(this.state)
@@ -52,7 +52,7 @@ class AddProduct extends Component {
                         </div>
                         <div className="p-field dropdown-demo p-col-12 p-md-6">
                             <label htmlFor="Category">Category</label>
-                            <Dropdown   options={category} name="categoryName" optionLabel="name" onChange={this.onChangeDropDown } />
+                            <Dropdown  value={this.state.categoryName} options={category} name="categoryName" optionLabel="name" onChange={this.onChangeDropDown } />
                         </div>
                     </div>
 
