@@ -7,7 +7,6 @@ import {Column} from "primereact/column";
 import {DataTable} from "primereact/datatable";
 import {Button} from "primereact/button";
 import {InputText} from "primereact/inputtext";
-import {NavLink} from "react-router-dom";
 
 
 class ProductList extends Component {
@@ -16,12 +15,17 @@ class ProductList extends Component {
         productSearch:""
     }
     componentDidMount() {
-        this.props.action.getProducts();
+        this.props.action.getProducts()
     }
 
     addToCart = (product) => {
         console.log(product);
         this.props.action.addToCart({quantity:1, product})
+    }
+    search=(e)=>{
+
+       this.setState({productSearch:e.target.value})
+
     }
     submitHandler=(event)=>{
         event.preventDefault()
@@ -45,21 +49,22 @@ class ProductList extends Component {
         return (
             <div>
                 <div className="card">
-                    <li>
-                            <a href="#Geitost">Geitost</a>
-                    </li>
+                    <form className="p-formgroup-inline" onSubmit={this.submitHandler}>
+                        <div className="p-field">
+                            <InputText id="firstname5" name ="input"type="text" placeholder="Search" onChange={(e)=>this.search(e)}/>
+                        </div>
+                        <InputText type="submit" label="Submit" />
+                    </form>
                     <a href="" className="internal -link"></a>
                     <DataTable value={this.props.products} onValueChange={sortedData => console.log(sortedData)}>
-                        <Column field="id" header="Code"></Column>
-                        <Column field="name" header="Name" columnKey="name"></Column>
+                        <Column field="productID" header="Code"></Column>
+                        <Column field="name" header="Name"></Column>
                         <Column field="quantityPerUnit" header="Quantity Per Unit"></Column>
                         <Column field="unitPrice" header="Unit Price"></Column>
                         <Column headerStyle={{width: '4rem'}} body={searchBodyTemplate}></Column>
 
                     </DataTable>
-                    <div id="Geitost">
-                        lasdalkjnbsdaksjbdj
-                    </div>
+
 
                 </div>
 
