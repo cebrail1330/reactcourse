@@ -5,7 +5,7 @@ import axios from "axios";
 export function addProduct(product){
     return function (dispatch){
         let url ="http://localhost:3000/products/"
-        return axios.post(url, {product}, {
+        return axios.post(url, product, {
             headers: {
                 'Content-Type': 'application/json'
             }})

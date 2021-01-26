@@ -21,6 +21,8 @@ export default function addToCart(state=initialState.cart, action){
                 return [...state, {...action.payload}]
 
             }
+        case actionTypes.REMOVE_FROM_CARRT:
+            const newState = state.filter(cartItem => cartItem.products.id !==action.payload.id)
         default:
             return state;
     }

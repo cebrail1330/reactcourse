@@ -23,11 +23,6 @@ class ProductList extends Component {
         console.log(product);
         this.props.action.addToCart({quantity:1, product})
     }
-    search=(e)=>{
-
-       this.setState({productSearch:e.target.value})
-
-    }
     submitHandler=(event)=>{
         event.preventDefault()
         console.log(this.state.productSearch)
@@ -51,16 +46,8 @@ class ProductList extends Component {
             <div>
                 <div className="card">
                     <li>
-                        <ul>
                             <a href="#Geitost">Geitost</a>
-                        </ul>
                     </li>
-                    <form className="p-formgroup-inline" onSubmit={this.submitHandler}>
-                        <div className="p-field">
-                            <InputText id="firstname5" name ="input"type="text" placeholder="Search" onChange={(e)=>this.search(e)}/>
-                        </div>
-                        <InputText type="submit" label="Submit" />
-                    </form>
                     <a href="" className="internal -link"></a>
                     <DataTable value={this.props.products} onValueChange={sortedData => console.log(sortedData)}>
                         <Column field="id" header="Code"></Column>

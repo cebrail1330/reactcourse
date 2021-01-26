@@ -7,9 +7,20 @@ import {Dropdown} from "primereact/dropdown";
 import * as categoryActions from "../../redux/actions/categoryActions";
 import "../../index.css"
 import {Button} from "primereact/button";
+
+const clearKey = (obj , keys) => {
+    const newObj = {}
+    Object.keys(obj).forEach(k => {
+        if(!keys.includes(k)) {
+            newObj[k] = obj[k];
+        }
+    })
+    return newObj;
+}
+
 class AddProduct extends Component {
     state={
-        name:"",
+        name:null,
         quantityPerUnit:null,
         unitPrice:null,
         categoryID: null,
@@ -28,11 +39,10 @@ class AddProduct extends Component {
         this.setState({categoryID: event.target.value.id, categoryName:event.value})
     }
     onClickHandler =(event)=>{
-        this.props.actions.addProduct(this.state)
+        this.props.actions.addProduct(clearKey(this.state, ['categoryName']))
     }
 
     render() {
-        console.log(this.state)
         const category= this.props.categories.map(category => ({name: category.name, id: category.categoryID}))
         return (
             <div className="card">
