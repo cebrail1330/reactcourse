@@ -6,7 +6,8 @@ import * as cartActions from "../../redux/actions/cartActions"
 import {Column} from "primereact/column";
 import {DataTable} from "primereact/datatable";
 import {Button} from "primereact/button";
-import {Link, NavLink} from "react-router-dom";
+import {InputText} from "primereact/inputtext";
+import {NavLink} from "react-router-dom";
 
 
 class ProductList extends Component {
@@ -19,11 +20,12 @@ class ProductList extends Component {
     }
 
     addToCart = (product) => {
+        console.log(product);
         this.props.action.addToCart({quantity:1, product})
     }
-    updateProduct=(event) =>{
-        console.log(event);
-
+    submitHandler=(event)=>{
+        event.preventDefault()
+        console.log(this.state.productSearch)
     }
 
     render() {
@@ -40,9 +42,6 @@ class ProductList extends Component {
         const searchBodyTemplate = (rowData) => {
             return <Button label="Add" className="p-button-secondary" onClick={()=>this.addToCart(rowData)} />;
         }
-        const updateTemplete = rowData =>{
-            //return <NavLink to="updateProduct"><Button label="Update" className="p-button-secondary" onClick={()=>this.updateProduct(rowData)}/></NavLink>
-        }
         return (
             <div>
                 <div className="card">
@@ -56,7 +55,6 @@ class ProductList extends Component {
                         <Column field="quantityPerUnit" header="Quantity Per Unit"></Column>
                         <Column field="unitPrice" header="Unit Price"></Column>
                         <Column headerStyle={{width: '4rem'}} body={searchBodyTemplate}></Column>
-                        <Column headerStyle={{width: '4rem'}} body={updateTemplete}></Column>
 
                     </DataTable>
                     <div id="Geitost">

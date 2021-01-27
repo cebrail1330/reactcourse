@@ -9,6 +9,7 @@ import Cart from "../cart/Cart";
 import AddProduct from "../addProduct/addProduct";
 import UpdateProduct from "../updateProduct/UpdateProduct";
 import {Switch, Route, BrowserRouter} from "react-router-dom"
+import Category from "../categories/Category";
 
 function App() {
   return (
@@ -16,14 +17,14 @@ function App() {
         <Navi/>
 
             <Switch>
-                <Route path="/" exact component={Dashboard}></Route>
+           {/*     <Route path="/" exact component={Dashboard}></Route>
                 <Route path="/product" exact component={Dashboard}></Route>
-                <Route path="/cart" exact component={Cart}></Route>
+              */}  <Route path="/cart" exact component={Cart}></Route>
                 <Route path="/addProduct" exact component={AddProduct}></Route>
                 <Route path="/updateProduct" exact component={UpdateProduct}></Route>
             </Switch>
 
-
+        <Category/>
     </div>
   );
 }

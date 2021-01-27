@@ -28,7 +28,9 @@ class CategoryList extends Component {
             <div className="card">
                 <ListBox  options={category} value={category} onChange={(e) => this.selectCategory(e.value)}  optionLabel="name" style={{width: '15rem'}} />
                 <h5>Seçili kategori: {this.props.currentCategory.name}</h5>
-
+                <div>
+                    <a href="#cebraill">cebrail</a>
+                </div>
             </div>
 
         );
