@@ -12,6 +12,10 @@ class Cart extends Component {
         console.log(product.product)
         this.props.action.addToProduct(product)
     }
+    removeFromCart=(product)=>{
+        console.log(product.product);
+        this.props.action.removeFromCart(product.product)
+    }
 
     render() {
         /*const product = this.props.cart.map((cartItem) => (cartItem.product));
@@ -20,7 +24,7 @@ class Cart extends Component {
             return (
                 <div>
                     <Button label="+" className="p-button-icon" onClick={()=>this.addToProduct(rowData)} />
-                    <Button label="-" className="p-button-danger" onClick={()=>this.addToCart(rowData)} />
+                    <Button label="-" className="p-button-danger" onClick={()=>this.removeFromCart(rowData)} />
                 </div>
 
             );
@@ -52,7 +56,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch){
     return{
         action:{
-            addToProduct: bindActionCreators(cartActions.addToCart, dispatch)
+            addToProduct: bindActionCreators(cartActions.addToCart, dispatch),
+            removeFromCart: bindActionCreators(cartActions.removeFromCart, dispatch)
         }
     }
 }

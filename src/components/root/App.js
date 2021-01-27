@@ -7,6 +7,7 @@ import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import Cart from "../cart/Cart";
 import AddProduct from "../addProduct/addProduct";
+import UpdateProduct from "../updateProduct/UpdateProduct";
 import {Switch, Route, BrowserRouter} from "react-router-dom"
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                 <Route path="/product" exact component={Dashboard}></Route>
                 <Route path="/cart" exact component={Cart}></Route>
                 <Route path="/addProduct" exact component={AddProduct}></Route>
+                <Route path="/updateProduct" exact component={UpdateProduct}></Route>
             </Switch>
 
 

@@ -6,3 +6,10 @@ export function addToCart(cartItem){
         payload: cartItem
     }
 }
+
+export function removeFromCart(cartItem){
+    return{
+        type:actionTypes.REMOVE_FROM_CART,
+        payload:cartItem
+    }
+}
